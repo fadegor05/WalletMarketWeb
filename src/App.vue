@@ -10,6 +10,12 @@ import ItemList from './components/ItemList.vue'
     <ItemList></ItemList>
 </template>
 
+<script>
+export default {
+    name: 'App',
+}
+</script>
+
 <style lang="scss">
 body {
     @apply bg-zinc-900
