@@ -12,3 +12,26 @@ Web application that makes your life easier when you need to search for skins in
 - Tailwind CSS
 - Vite
 - Axios
+
+## Development
+
+Install dependencies
+```
+npm install
+```
+
+Start the dev server
+```
+npm run dev
+```
+
+## Production
+
+Start container with project
+```
+docker-compose up --build --detach
+```
+Stop the container
+```
+docker container stop wallet-market-container
+```

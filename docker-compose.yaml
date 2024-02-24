@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  wallet-market:
+    build: .
+    container_name: wallet-market-container
+    ports:
+      - 80:80
