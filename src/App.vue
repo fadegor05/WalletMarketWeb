@@ -18,6 +18,6 @@ export default {
 
 <style lang="scss">
 body {
-    @apply bg-zinc-900
+    @apply bg-zinc-900;
 }
 </style>
