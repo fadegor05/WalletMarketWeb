@@ -3,7 +3,9 @@ import { createStore } from 'vuex'
 const store = createStore({
     state() {
         return {
-            amount: null
+            amount: null,
+            loading: false,
+            items: []
         }
     }
 })

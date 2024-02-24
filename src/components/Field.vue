@@ -8,11 +8,16 @@
 </template>
 
 <script>
+import handler from '../handler.js';
 export default {
     name: 'Field',
     methods: {
         updateAmount(event) {
-            this.$store.state.amount = event.target.value
+            const value = event.target.value
+            if (parseFloat(value) >= 1){
+                this.$store.state.amount = value;
+                handler();
+            }
         }
     }
 }
