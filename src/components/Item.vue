@@ -14,7 +14,7 @@
                 <div class="font-inter font-normal text-zinc-300">Профит: {{item_data.profit}}₽</div>
                 <div class="flex mt-auto flex-col">
                     <a :href="'https://market.csgo.com/' + item_data.name" class="font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all">
-                        MarketCSGO
+                        Market CS:GO
                     </a>
                     <a :href="'https://steamcommunity.com/market/listings/730/' + item_data.name" class="font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all">
                         Steam

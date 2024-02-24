@@ -1,7 +1,14 @@
-# Vue 3 + Vite
+# WalletMarket
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Web application that makes your life easier when you need to search for skins in MarketCSGO to deposit money into your Steam account. **Qiwi has blocked in Russia recently, so this is one of the only remaining methods.**
 
-## Recommended IDE Setup
+[![Screenshot](/images/image-1.png)]()
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Website]()
+
+## Stack & technologies
+
+- Vue.js with Vuex (storage)
+- Tailwind CSS
+- Vite
+- Axios
