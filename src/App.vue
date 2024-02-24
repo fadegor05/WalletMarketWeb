@@ -9,3 +9,9 @@ import ItemList from './components/ItemList.vue'
     <Field></Field>
     <ItemList></ItemList>
 </template>
+
+<style lang="scss">
+body {
+    @apply bg-zinc-900
+}
+</style>
