@@ -39,11 +39,11 @@ export default {
 
 <style lang="scss">
 .item {
-    @apply p-5 flex hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
+    @apply p-5 flex flex-col sm:flex-row hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-2/3 sm:w-3/4 xl:w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
 }
 
 .item-image-container {
-    @apply bg-zinc-900 p-5 rounded-xl min-w-52 min-h-52 size-52 flex justify-center items-center border border-zinc-600;
+    @apply bg-zinc-900 p-5 rounded-xl min-w-full min-h-fit sm:min-w-52 sm:min-h-52 sm:size-52 flex justify-center items-center border border-zinc-600;
 }
 
 .item-image {
@@ -55,7 +55,7 @@ export default {
 }
 
 .item-info {
-    @apply ml-6 flex flex-col;
+    @apply mt-4 sm:mt-0 sm:ml-6 flex flex-col;
 }
 
 .item-info-title {
@@ -75,7 +75,7 @@ export default {
 }
 
 .item-info-url {
-    @apply flex mt-auto flex-col;
+    @apply flex mt-4 sm:mt-auto flex-row sm:flex-col justify-between ;
 }
 
 .item-info-url-link {

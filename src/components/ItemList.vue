@@ -30,6 +30,6 @@ export default {
 }
 
 .item-list-text {
-    @apply mx-auto font-inter text-center font-normal mt-40 text-zinc-600 text-base;
+    @apply mx-auto font-inter text-center font-normal mt-40 text-zinc-600 text-base p-5;
 }
 </style>

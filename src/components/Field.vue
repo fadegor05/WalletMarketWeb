@@ -23,7 +23,7 @@ export default {
 
 <style>
 .field {
-    @apply mx-auto flex flex-col mt-10;
+    @apply mx-auto flex flex-col mt-10 w-9/12 sm:w-3/5 md:w-1/2 lg:w-96;
 }
 
 .field-label {
@@ -31,6 +31,6 @@ export default {
 }
 
 .field-input {
-    @apply mt-1 w-96 p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-zinc-800 transition-all focus:ring-blue-500 focus:border-blue-500 bg-zinc-800 border-zinc-600 placeholder-zinc-400 text-white;
+    @apply mt-1 mx-auto min-w-full p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-zinc-800 transition-all focus:ring-blue-500 focus:border-blue-500 bg-zinc-800 border-zinc-600 placeholder-zinc-400 text-white;
 }
 </style>
