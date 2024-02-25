@@ -49,7 +49,6 @@ async function getItemsWithMostVolume(itemList, selection) {
     return includedInSelectionItems;
 }
 
-
 async function mergeAndPutSteamItems(itemList) {
     store.state.items = [];
     itemList.forEach((market_item, index) => {
@@ -57,7 +56,8 @@ async function mergeAndPutSteamItems(itemList) {
         axios.get(url).then(response => {
             const steam_item = response.data;
             if (steam_item.success == true) {
-                const profit = Math.round((parseFloat(steam_item.lowest_price) * 0.87 - parseFloat(market_item.price) ) * 100) / 100;
+                const steam_price = average([parseFloat(steam_item.lowest_price), parseFloat(steam_item.median_price), parseFloat(steam_item.average_price)])  * 0.87
+                const profit = Math.round((steam_price - parseFloat(market_item.price)) * 100 ) / 100;
                 if (profit != 0){
                     const instance = {
                         name: market_item.market_hash_name,
@@ -76,6 +76,8 @@ async function mergeAndPutSteamItems(itemList) {
     })
 }
 
-
+function average(nums) {
+    return nums.reduce((a, b) => (a + b)) / nums.length;
+}
 
 export default handler;
