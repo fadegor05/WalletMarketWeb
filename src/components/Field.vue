@@ -23,7 +23,7 @@ export default {
 
 <style>
 .field {
-    @apply mx-auto flex flex-col mt-10 w-9/12 sm:w-3/5 md:w-1/2 lg:w-96;
+    @apply mx-auto flex flex-col mt-10 w-11/12 sm:w-3/5 md:w-1/2 lg:w-96;
 }
 
 .field-label {

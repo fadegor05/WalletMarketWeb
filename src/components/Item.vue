@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 .item {
-    @apply p-5 flex flex-col sm:flex-row hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-2/3 sm:w-3/4 xl:w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
+    @apply p-5 flex flex-col sm:flex-row hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-11/12 sm:w-3/4 xl:w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
 }
 
 .item-image-container {
