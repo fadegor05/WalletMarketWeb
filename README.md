@@ -12,6 +12,8 @@ Web application that makes your life easier when you need to search for skins in
 - Tailwind CSS
 - Vite
 - Axios
+- Nginx
+- Docker, docker-compose
 
 ## Development
 
