@@ -23,7 +23,6 @@ async function handler() {
 
 async function getItemsFromMarket() {
     let response = await axios.get(marketURL);
-    console.log(response.data)
     return response.data.items;
 }
 
