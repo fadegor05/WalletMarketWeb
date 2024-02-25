@@ -33,7 +33,7 @@ Start container with project
 ```
 docker-compose up --build --detach
 ```
-Stop the container
+Stop the project
 ```
-docker container stop wallet-market-container
+docker-compose stop
 ```

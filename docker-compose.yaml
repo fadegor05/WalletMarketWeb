@@ -4,5 +4,17 @@ services:
   wallet-market:
     build: .
     container_name: wallet-market-container
-    ports:
+    volumes:
+      - www-dist:/app/dist
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container
+    depends_on:
+      - wallet-market
+    ports: 
       - 80:80
+    volumes:
+      - ./nginx-conf.d:/etc/nginx/conf.d
+      - www-dist:/var/www/dist
+volumes:
+  www-dist:
