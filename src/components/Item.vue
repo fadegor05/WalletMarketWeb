@@ -1,25 +1,23 @@
 <template>
-    <div>
-        <div class="p-5 flex hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10">
-            <div class="bg-zinc-900 p-5 rounded-xl size-52 flex justify-center items-center border border-zinc-600">
-                <img class=" size-fit" v-show="item_data.icon != ''" :src="item_data.icon" alt="">
-                <svg v-show="item_data.icon == ''" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-8 h-8 stroke-zinc-600">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                </svg>  
-            </div>
-            <div class="information ml-6 flex flex-col">
-                <div class="font-inter font-semibold text-3xl text-white">{{item_data.name}}</div>
-                <div class="font-inter font-medium text-zinc-200 mt-2">Цена Market CSGO: {{item_data.market_price}}₽</div>
-                <div class="font-inter font-medium text-zinc-200">Цена Steam: {{item_data.steam_price}}₽</div>
-                <div class="font-inter font-normal text-zinc-300">Профит: {{item_data.profit}}₽</div>
-                <div class="flex mt-auto flex-col">
-                    <a :href="'https://market.csgo.com/' + item_data.name" class="font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all">
-                        Market CS:GO
-                    </a>
-                    <a :href="'https://steamcommunity.com/market/listings/730/' + item_data.name" class="font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all">
-                        Steam
-                    </a>
-                </div>
+    <div class="item">
+        <div class="item-image-container">
+            <img class="item-image" v-show="item_data.icon != ''" :src="item_data.icon" alt="">
+            <svg v-show="item_data.icon == ''" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="item-no-image">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>  
+        </div>
+        <div class="item-info">
+            <div class="item-info-title">{{item_data.name}}</div>
+            <div class="item-info-md mt-2">Цена Market CSGO: {{item_data.market_price}}₽</div>
+            <div class="item-info-md">Цена Steam: {{item_data.steam_price}}₽</div>
+            <div class="item-info-sm">Профит: {{item_data.profit}}₽</div>
+            <div class="item-info-url">
+                <a :href="'https://market.csgo.com/' + item_data.name" class="item-info-url-link">
+                    Market CS:GO
+                </a>
+                <a :href="'https://steamcommunity.com/market/listings/730/' + item_data.name" class="item-info-url-link">
+                    Steam
+                </a>
             </div>
         </div>
     </div>
@@ -38,3 +36,49 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+.item {
+    @apply p-5 flex hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
+}
+
+.item-image-container {
+    @apply bg-zinc-900 p-5 rounded-xl min-w-52 min-h-52 size-52 flex justify-center items-center border border-zinc-600;
+}
+
+.item-image {
+    @apply size-fit;
+}
+
+.item-no-image {
+    @apply w-8 h-8 stroke-zinc-600;
+}
+
+.item-info {
+    @apply ml-6 flex flex-col;
+}
+
+.item-info-title {
+    @apply item-info-text font-semibold text-3xl text-white;
+}
+
+.item-info-md {
+    @apply item-info-text font-medium text-zinc-200;
+}
+
+.item-info-sm {
+    @apply item-info-text font-normal text-zinc-300;
+}
+
+.item-info-text {
+    @apply font-inter;
+}
+
+.item-info-url {
+    @apply flex mt-auto flex-col;
+}
+
+.item-info-url-link {
+    @apply font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all;
+}
+</style>

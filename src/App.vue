@@ -5,9 +5,11 @@ import ItemList from './components/ItemList.vue'
 </script>
 
 <template>
-    <Title></Title>
-    <Field></Field>
-    <ItemList></ItemList>
+    <div class="root">
+        <Title></Title>
+        <Field></Field>
+        <ItemList></ItemList>
+    </div>
 </template>
 
 <script>
@@ -19,5 +21,9 @@ export default {
 <style lang="scss">
 body {
     @apply bg-zinc-900;
+}
+
+.root {
+    @apply flex flex-col;
 }
 </style>
