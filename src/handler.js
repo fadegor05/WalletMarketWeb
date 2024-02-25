@@ -5,7 +5,7 @@ const marketURL = '/market_api/api/v2/prices/RUB.json';
 const steamURL = '/steam_api/api/GetItemPrice/?currency=RUB&time=4&icon=1&id='
 
 const inputDelta = 0.1
-const inputSelection = 20
+const inputSelection = 6
 
 async function handler() {
     if (store.state.loading == false){
@@ -57,13 +57,15 @@ async function mergeAndPutSteamItems(itemList) {
             if (steam_item.success == true) {
                 const steam_price = average([parseFloat(steam_item.lowest_price), parseFloat(steam_item.median_price), parseFloat(steam_item.average_price)])  * 0.87
                 const profit = Math.round((steam_price - parseFloat(market_item.price)) * 100 ) / 100;
+                let icon_url = steam_item.icon
+                icon_url = icon_url.replace('http://cdn.steamcommunity.com/economy/image/', 'https://steamcommunity-a.akamaihd.net/economy/image/');
                 if (profit != 0){
                     const instance = {
                         name: market_item.market_hash_name,
                         market_price: market_item.price,
                         steam_price: steam_item.lowest_price,
                         profit: profit,
-                        icon: steam_item.icon
+                        icon: icon_url
                     }
                     store.state.items.push(instance)
                 }
