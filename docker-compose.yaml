@@ -13,8 +13,20 @@ services:
       - wallet-market
     ports: 
       - 80:80
+      - 443:443
     volumes:
-      - ./nginx-conf.d:/etc/nginx/conf.d
+      - ./nginx:/etc/nginx/conf.d
       - www-dist:/var/www/dist
+      - etc-letsencrypt:/etc/letsencrypt
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot-container
+    volumes:
+      - etc-letsencrypt:/etc/letsencrypt
+      - www-dist:/var/www/dist
+    command: certonly --webroot --webroot-path=/var/www/dist --email fad.egor05@gmail.com --agree-tos --no-eff-email -d wm.fadegor05.ru
 volumes:
   www-dist:
+  etc-letsencrypt:
