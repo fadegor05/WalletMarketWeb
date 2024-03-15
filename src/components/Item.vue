@@ -8,9 +8,9 @@
         </div>
         <div class="item-info">
             <div class="item-info-title">{{item_data.name}}</div>
-            <div class="item-info-md mt-2">Цена Market CSGO: {{item_data.market_price}}₽</div>
-            <div class="item-info-md">Цена Steam: {{item_data.steam_price}}₽</div>
-            <div class="item-info-sm">Профит: {{item_data.profit}}₽</div>
+            <div class="item-info-md mt-2">Цена Market CSGO: {{roundValue(item_data.market_price/$store.state.currency.rate)}}{{ $store.state.currency.icon }}</div>
+            <div class="item-info-md">Цена Steam: {{roundValue(item_data.steam_price/$store.state.currency.rate)}}{{ $store.state.currency.icon }}</div>
+            <div class="item-info-sm">Профит: {{roundValue(item_data.profit/$store.state.currency.rate) }}{{ $store.state.currency.icon }}</div>
             <div class="item-info-url">
                 <a :href="'https://market.csgo.com/' + item_data.name" class="item-info-url-link">
                     Market CS:GO
@@ -33,7 +33,13 @@ export default {
                 return {}
             }
         }
+    },
+    methods: {
+        roundValue(value) {
+            return Math.round(( value ) * 100 ) / 100
+        }
     }
+    
 }
 </script>
 

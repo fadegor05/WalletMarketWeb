@@ -11,7 +11,7 @@ async function handler() {
     if (store.state.loading == false){
         store.state.loading = true;
         getItemsFromMarket().then((itemList => {
-            getItemsWithFittablePrices(itemList, parseInt(store.state.amount), inputDelta).then(fittableItems => {
+            getItemsWithFittablePrices(itemList, parseInt(store.state.amount*store.state.currency.rate), inputDelta).then(fittableItems => {
                 getItemsWithMostVolume(fittableItems, inputSelection).then(mostVolumeItems => {
                     mergeAndPutSteamItems(mostVolumeItems);
                 })
@@ -55,9 +55,9 @@ async function mergeAndPutSteamItems(itemList) {
         axios.get(url).then(response => {
             const steam_item = response.data;
             if (steam_item.success == true) {
-                const steam_price = average([parseFloat(steam_item.lowest_price), parseFloat(steam_item.median_price), parseFloat(steam_item.average_price)])  * 0.87
-                const profit = Math.round((steam_price - parseFloat(market_item.price)) * 100 ) / 100;
-                let icon_url = steam_item.icon
+                const steam_price = average([parseFloat(steam_item.lowest_price), parseFloat(steam_item.median_price), parseFloat(steam_item.average_price)]) * 0.87;
+                const profit = steam_price - parseFloat(market_item.price);
+                let icon_url = steam_item.icon;
                 icon_url = icon_url.replace('http://cdn.steamcommunity.com/economy/image/', 'https://steamcommunity-a.akamaihd.net/economy/image/');
                 if (profit != 0){
                     const instance = {

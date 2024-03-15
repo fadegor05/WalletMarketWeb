@@ -1,6 +1,6 @@
 <template>
     <div class="field">
-        <label class="field-label">Сумма, ₽</label>
+        <label class="field-label">Сумма, {{ $store.state.currency.icon }}</label>
         <input placeholder="100" type="number" class="field-input" :value="$store.state.amount" @input="updateAmount">
     </div>
 </template>
