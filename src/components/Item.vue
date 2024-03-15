@@ -8,7 +8,7 @@
         </div>
         <div class="item-info">
             <div class="item-info-title">{{item_data.name}}</div>
-            <div class="item-info-md mt-2">Цена Market CSGO: {{roundValue(item_data.market_price/$store.state.currency.rate)}}{{ $store.state.currency.icon }}</div>
+            <div class="item-info-md mt-2">Цена Market CSGO: {{roundValue(item_data.market_price)}}₽</div>
             <div class="item-info-md">Цена Steam: {{roundValue(item_data.steam_price/$store.state.currency.rate)}}{{ $store.state.currency.icon }}</div>
             <div class="item-info-sm">Профит: {{roundValue(item_data.profit/$store.state.currency.rate) }}{{ $store.state.currency.icon }}</div>
             <div class="item-info-url">

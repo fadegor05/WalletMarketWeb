@@ -1,7 +1,12 @@
+<script setup>
+    import Currency from './Currency.vue';
+</script>
+
 <template>
     <div class="field">
-        <label class="field-label">Сумма, {{ $store.state.currency.icon }}</label>
+        <label class="field-label">Сумма, ₽</label>
         <input placeholder="100" type="number" class="field-input" :value="$store.state.amount" @input="updateAmount">
+        <Currency></Currency>
     </div>
 </template>
 

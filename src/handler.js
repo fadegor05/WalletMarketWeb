@@ -11,7 +11,7 @@ async function handler() {
     if (store.state.loading == false){
         store.state.loading = true;
         getItemsFromMarket().then((itemList => {
-            getItemsWithFittablePrices(itemList, parseInt(store.state.amount*store.state.currency.rate), inputDelta).then(fittableItems => {
+            getItemsWithFittablePrices(itemList, parseInt(store.state.amount), inputDelta).then(fittableItems => {
                 getItemsWithMostVolume(fittableItems, inputSelection).then(mostVolumeItems => {
                     mergeAndPutSteamItems(mostVolumeItems);
                 })
