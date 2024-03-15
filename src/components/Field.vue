@@ -5,8 +5,10 @@
 <template>
     <div class="field">
         <label class="field-label">Сумма, ₽</label>
-        <input placeholder="100" type="number" class="field-input" :value="$store.state.amount" @input="updateAmount">
-        <Currency></Currency>
+        <div class="flex mt-1 flex-col md:flex-row">
+            <input placeholder="100" type="number" class="field-input" :value="$store.state.amount" @input="updateAmount">
+            <Currency></Currency>
+        </div>
     </div>
 </template>
 
@@ -36,6 +38,6 @@ export default {
 }
 
 .field-input {
-    @apply mt-1 mx-auto min-w-full p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-slate-900 transition-all focus:ring-blue-500 focus:border-blue-500 bg-slate-900 border-slate-600 placeholder-slate-400 text-white;
+    @apply max-h-16 h-16 min-w-full p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-slate-900 transition-all focus:ring-blue-500 focus:border-blue-500 bg-slate-900 border-slate-600 placeholder-slate-400 text-white;
 }
 </style>
