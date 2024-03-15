@@ -39,11 +39,11 @@ export default {
 
 <style lang="scss">
 .item {
-    @apply p-5 flex flex-col sm:flex-row hover:shadow-lg hover:shadow-zinc-800 transition-all bg-zinc-800 rounded-3xl w-11/12 sm:w-3/4 xl:w-3/5 mx-auto mt-10 border border-zinc-600 last:mb-10;
+    @apply p-5 flex flex-col sm:flex-row hover:shadow-lg hover:shadow-slate-900 transition-all bg-slate-900 rounded-3xl w-11/12 sm:w-3/4 xl:w-3/5 mx-auto mt-10 border border-slate-600 last:mb-10;
 }
 
 .item-image-container {
-    @apply bg-zinc-900 p-5 rounded-xl min-w-full min-h-fit sm:min-w-52 sm:min-h-52 sm:size-52 flex justify-center items-center border border-zinc-600;
+    @apply bg-slate-950 p-5 rounded-xl min-w-full min-h-fit sm:min-w-52 sm:min-h-52 sm:size-52 flex justify-center items-center border border-slate-600;
 }
 
 .item-image {
@@ -51,7 +51,7 @@ export default {
 }
 
 .item-no-image {
-    @apply w-8 h-8 stroke-zinc-600;
+    @apply w-8 h-8 stroke-slate-600;
 }
 
 .item-info {
@@ -63,11 +63,11 @@ export default {
 }
 
 .item-info-md {
-    @apply item-info-text font-medium text-zinc-200;
+    @apply item-info-text font-medium text-slate-200;
 }
 
 .item-info-sm {
-    @apply item-info-text font-normal text-zinc-300;
+    @apply item-info-text font-normal text-slate-300;
 }
 
 .item-info-text {
@@ -79,6 +79,6 @@ export default {
 }
 
 .item-info-url-link {
-    @apply font-inter font-bold text-zinc-300 hover:text-white text-left max-w-fit transition-all;
+    @apply font-inter font-bold text-slate-300 hover:text-white text-left max-w-fit transition-all;
 }
 </style>

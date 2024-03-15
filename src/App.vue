@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 body {
-    @apply bg-zinc-900;
+    @apply bg-slate-950;
 }
 
 .root {

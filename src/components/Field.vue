@@ -31,6 +31,6 @@ export default {
 }
 
 .field-input {
-    @apply mt-1 mx-auto min-w-full p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-zinc-800 transition-all focus:ring-blue-500 focus:border-blue-500 bg-zinc-800 border-zinc-600 placeholder-zinc-400 text-white;
+    @apply mt-1 mx-auto min-w-full p-4 border rounded-lg font-inter text-base hover:shadow-lg hover:shadow-slate-900 transition-all focus:ring-blue-500 focus:border-blue-500 bg-slate-900 border-slate-600 placeholder-slate-400 text-white;
 }
 </style>
