@@ -8,6 +8,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.19",
     "axios": "^1.6.7",
     "vue": "^3.4.19",
     "vuex": "^4.1.0"

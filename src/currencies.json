@@ -1,0 +1,24 @@
+{
+    "currencies": [
+        {
+            "code": "RUB",
+            "icon": "₽",
+            "rate": 1
+        },
+        {
+            "code": "KZT",
+            "icon": "₸",
+            "rate": 5
+        },
+        {
+            "code": "USD",
+            "icon": "$",
+            "rate": 90
+        },
+        {
+            "code": "EUR",
+            "icon": "€",
+            "rate": 100
+        }
+    ]
+}
